@@ -8,6 +8,10 @@ var _reactNativeWeb = require('react-native-web');
 
 var _reactNativeWeb2 = _interopRequireDefault(_reactNativeWeb);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _minimongoCache = require('minimongo-cache');
 
 var _minimongoCache2 = _interopRequireDefault(_minimongoCache);
@@ -22,7 +26,7 @@ process.nextTick = setImmediate;
 
 var db = new _minimongoCache2.default();
 db.debug = false;
-db.batchedUpdates = _reactNativeWeb2.default.unstable_batchedUpdates;
+db.batchedUpdates = _reactDom2.default.unstable_batchedUpdates;
 
 function runAfterOtherComputations(fn) {
   _reactNativeWeb.InteractionManager.runAfterInteractions(function () {

@@ -1,7 +1,7 @@
 {
-  "name": "react-native-meteor",
-  "version": "1.0.3",
-  "description": "Full Meteor Client for React Native",
+  "name": "react-meteor-client",
+  "version": "0.0.1",
+  "description": "Meteor Client for React, independent from Meteor Isobuild",
   "main": "dist/Meteor.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require test/setup --recursive",
@@ -9,23 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inProgress-team/react-native-meteor.git"
+    "url": "git+https://github.com/bvodola/react-meteor-client"
   },
   "keywords": [
     "react-component",
     "ddp",
     "meteor",
-    "react",
-    "react-native",
-    "ios",
-    "android"
+    "react"
   ],
-  "author": "Théo Mathieu",
+  "author": "Brunno Vodola",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inProgress-team/react-native-meteor/issues"
+    "url": "https://github.com/bvodola/react-meteor-client/issues"
   },
-  "homepage": "https://github.com/inProgress-team/react-native-meteor#readme",
+  "homepage": "https://github.com/bvodola/react-meteor-client",
   "dependencies": {
     "base-64": "^0.1.0",
     "crypto-js": "^3.1.6",
