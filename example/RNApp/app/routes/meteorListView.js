@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native-web';
 import Meteor, { connectMeteor, MeteorListView } from 'react-native-meteor';
 import Button from '../components/button';
 

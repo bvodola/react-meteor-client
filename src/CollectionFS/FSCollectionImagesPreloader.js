@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native-web';
 
 
 import Data from '../Data';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native-web';
 import {Scene, Router} from 'react-native-router-flux';
 
 import connect from './connect';

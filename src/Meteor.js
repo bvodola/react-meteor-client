@@ -1,5 +1,7 @@
+import "babel-core/register";
+import "babel-polyfill";
 
-import { NetInfo, Platform, View } from 'react-native';
+import { NetInfo, Platform, View } from 'react-native-web';
 
 import reactMixin from 'react-mixin';
 import Trackr from 'trackr';

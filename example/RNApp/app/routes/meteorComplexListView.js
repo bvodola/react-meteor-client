@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native-web';
 import Meteor, { MeteorComplexListView } from 'react-native-meteor';
 
 class MeteorComplexListViewComponent extends Component {

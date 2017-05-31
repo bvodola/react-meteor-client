@@ -1,6 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native-web';
 import Meteor, { connectMeteor } from 'react-native-meteor';
 
 import Button from '../components/button';

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, StyleSheet, TextInput, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Dimensions } from 'react-native-web';
 import Meteor, { connectMeteor, Accounts } from 'react-native-meteor';
 import Button from '../components/button';
 

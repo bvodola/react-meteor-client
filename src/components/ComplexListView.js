@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import { ListView } from 'react-native';
+import { ListView } from 'react-native-web';
 
 
 import Data from '../Data';

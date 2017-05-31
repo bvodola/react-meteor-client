@@ -1,15 +1,7 @@
-"use strict";
+//https://github.com/meteor/meteor/tree/master/packages/mongo-id
+import EJSON from "ejson";
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; //https://github.com/meteor/meteor/tree/master/packages/mongo-id
-
-
-var _ejson = require("ejson");
-
-var _ejson2 = _interopRequireDefault(_ejson);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var MongoID = {};
+let MongoID = {};
 
 MongoID._looksLikeObjectID = function (str) {
   return str.length === 24 && str.match(/^[0-9a-f]*$/);
@@ -37,7 +29,8 @@ MongoID.ObjectID.prototype.toString = function () {
 
 MongoID.ObjectID.prototype.equals = function (other) {
   var self = this;
-  return other instanceof MongoID.ObjectID && self.valueOf() === other.valueOf();
+  return other instanceof MongoID.ObjectID &&
+    self.valueOf() === other.valueOf();
 };
 
 MongoID.ObjectID.prototype.clone = function () {
@@ -45,20 +38,21 @@ MongoID.ObjectID.prototype.clone = function () {
   return new MongoID.ObjectID(self._str);
 };
 
-MongoID.ObjectID.prototype.typeName = function () {
+MongoID.ObjectID.prototype.typeName = function() {
   return "oid";
 };
 
-MongoID.ObjectID.prototype.getTimestamp = function () {
+MongoID.ObjectID.prototype.getTimestamp = function() {
   var self = this;
   return parseInt(self._str.substr(0, 8), 16);
 };
 
-MongoID.ObjectID.prototype.valueOf = MongoID.ObjectID.prototype.toJSONValue = MongoID.ObjectID.prototype.toHexString = function () {
-  return this._str;
-};
+MongoID.ObjectID.prototype.valueOf =
+    MongoID.ObjectID.prototype.toJSONValue =
+    MongoID.ObjectID.prototype.toHexString =
+    function () { return this._str; };
 
-_ejson2.default.addType("oid", function (str) {
+EJSON.addType("oid",  function (str) {
   return new MongoID.ObjectID(str);
 });
 
@@ -69,23 +63,22 @@ MongoID.idStringify = function (id) {
     if (id === "") {
       return id;
     } else if (id.substr(0, 1) === "-" || // escape previously dashed strings
-    id.substr(0, 1) === "~" || // escape escaped numbers, true, false
-    MongoID._looksLikeObjectID(id) || // escape object-id-form strings
-    id.substr(0, 1) === '{') {
-      // escape object-form strings, for maybe implementing later
+               id.substr(0, 1) === "~" || // escape escaped numbers, true, false
+               MongoID._looksLikeObjectID(id) || // escape object-id-form strings
+               id.substr(0, 1) === '{') { // escape object-form strings, for maybe implementing later
       return "-" + id;
     } else {
       return id; // other strings go through unchanged.
     }
   } else if (id === undefined) {
     return '-';
-  } else if ((typeof id === "undefined" ? "undefined" : _typeof(id)) === 'object' && id !== null) {
+  } else if (typeof id === 'object' && id !== null) {
     throw new Error("Meteor does not currently support objects other than ObjectID as ids");
-  } else {
-    // Numbers, true, false, null
+  } else { // Numbers, true, false, null
     return "~" + JSON.stringify(id);
   }
 };
+
 
 MongoID.idParse = function (id) {
   if (id === "") {

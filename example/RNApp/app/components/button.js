@@ -4,7 +4,7 @@ import {
   Text,
   View,
   TouchableOpacity
-} from 'react-native';
+} from 'react-native-web';
 
 export default class Button extends Component {
   render() {

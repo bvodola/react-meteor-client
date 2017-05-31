@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from 'react-native-web';
 
 import Data from '../Data';
 import { hashPassword } from '../../lib/utils';

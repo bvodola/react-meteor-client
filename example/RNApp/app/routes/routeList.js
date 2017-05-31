@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { View, Text, ListView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ListView, StyleSheet, TouchableOpacity } from 'react-native-web';
 import { Actions } from 'react-native-router-flux';
 
 const ROUTE_LIST = [
