@@ -1,6 +1,6 @@
 {
   "name": "react-meteor-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Meteor Client for React, independent from Meteor Isobuild",
   "main": "dist/Meteor.js",
   "scripts": {
